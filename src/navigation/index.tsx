@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -9,6 +9,7 @@ import { ProfileScreen } from '@screens/ProfileScreen';
 import { SettingsScreen } from '@screens/SettingsScreen';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useAuth } from '@hooks/useAuth';
+import { OnboardingScreen, checkOnboardingSeen } from '@screens/OnboardingScreen';
 
 // Create navigators
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -55,9 +56,18 @@ const AuthNavigator = () => {
 export const Navigation = () => {
   const { user, loading } = useAuth();
   const isAuthenticated = !!user;
+  const [showOnboarding, setShowOnboarding] = useState<boolean | null>(null);
 
-  if (loading) {
-    return null; // ou um splash/loading
+  useEffect(() => {
+    checkOnboardingSeen().then(seen => setShowOnboarding(!seen));
+  }, []);
+
+  if (loading || showOnboarding === null) {
+    return null; // splash/loading
+  }
+
+  if (showOnboarding) {
+    return <OnboardingScreen onFinish={() => setShowOnboarding(false)} />;
   }
 
   return (
