@@ -10,15 +10,16 @@ import { SettingsScreen } from '@screens/SettingsScreen';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useAuth } from '@hooks/useAuth';
 import { OnboardingScreen, checkOnboardingSeen } from '@screens/OnboardingScreen';
-
+import { ForgotPasswordScreen } from '@screens/ForgotPasswordScreen';
+import { RegisterScreen } from '@screens/RegisterScreen';
 // Create navigators
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator<MainTabParamList>();
 const AuthStack = createNativeStackNavigator<AuthStackParamList>();
 
 // Placeholder screens - these will be created later
-const RegisterScreen = () => null;
-const ForgotPasswordScreen = () => null;
+// const RegisterScreen = () => null;
+// const ForgotPasswordScreen = () => null;
 
 // Tab Navigator
 const MainTabs = () => {
@@ -65,8 +66,8 @@ export const Navigation = () => {
   if (loading || showOnboarding === null) {
     return null; // splash/loading
   }
-
   if (showOnboarding) {
+  // if (showOnboarding) {
     return <OnboardingScreen onFinish={() => setShowOnboarding(false)} />;
   }
 

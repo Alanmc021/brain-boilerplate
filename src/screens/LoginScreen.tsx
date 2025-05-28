@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { useAuth } from '@hooks/useAuth';
 import { CustomButton } from '@components/CustomButton/CustomButton';
 import { CustomTextInput } from '@components/CustomTextInput/CustomTextInput';
+import { useNavigation } from '@react-navigation/native';
 
 const schema = yup.object().shape({
   email: yup.string().email('Invalid email').required('Email is required'),
@@ -29,6 +30,7 @@ export const LoginScreen = () => {
   } = useForm<FormData>({
     resolver: yupResolver(schema),
   });
+  const navigation = useNavigation();
 
   const onSubmit = async (data: FormData) => {     
     await login(data.email, data.password);
@@ -104,6 +106,18 @@ export const LoginScreen = () => {
         >
           {t('login.button')}
         </CustomButton>
+        <Text
+          style={styles.registerLink}
+          onPress={() => navigation.navigate('Register' as never)}
+        >
+          {t('register.registerLink')}
+        </Text>
+        <Text
+          style={styles.forgotLink}
+          onPress={() => navigation.navigate('ForgotPassword' as never)}
+        >
+          {t('forgot.forgotLink')}
+        </Text>
       </ScrollView>
     </KeyboardAvoidingView>
   );
@@ -133,5 +147,19 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 16,
+  },
+  registerLink: {
+    color: '#1976d2',
+    marginTop: 8,
+    textAlign: 'center',
+    textDecorationLine: 'underline',
+    fontWeight: '500',
+  },
+  forgotLink: {
+    color: '#1976d2',
+    marginTop: 16,
+    textAlign: 'center',
+    textDecorationLine: 'underline',
+    fontWeight: '500',
   },
 }); 

@@ -4,5 +4,29 @@
     "email": "Email",
     "password": "Password",
     "button": "Login"
+  },
+  "forgot": {
+    "title": "Forgot Password",
+    "subtitle": "Enter your email to receive a reset link.",
+    "email": "Email",
+    "send": "Send",
+    "successTitle": "Check your email!",
+    "successInfo": "If this email exists, you will receive a password reset link soon.",
+    "backToLogin": "Back to Login",
+    "error": "Email not found.",
+    "forgotLink": "Forgot your password?"
+  },
+  "register": {
+    "title": "Create Account",
+    "subtitle": "Fill in your details to create a new account.",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "button": "Register",
+    "successTitle": "Account created!",
+    "successInfo": "You can now log in with your new account.",
+    "backToLogin": "Back to Login",
+    "error": "This email is already registered.",
+    "registerLink": "Don't have an account? Create one"
   }
 } 

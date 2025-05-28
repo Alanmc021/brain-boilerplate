@@ -4,5 +4,29 @@
     "email": "E-mail",
     "password": "Senha",
     "button": "Acessar"
+  },
+  "forgot": {
+    "title": "Recuperar Senha",
+    "subtitle": "Digite seu e-mail para receber um link de redefinição.",
+    "email": "E-mail",
+    "send": "Enviar",
+    "successTitle": "Verifique seu e-mail!",
+    "successInfo": "Se este e-mail existir, você receberá um link para redefinir sua senha em breve.",
+    "backToLogin": "Voltar para o Login",
+    "error": "E-mail não encontrado.",
+    "forgotLink": "Esqueceu sua senha?"
+  },
+  "register": {
+    "title": "Criar Conta",
+    "subtitle": "Preencha seus dados para criar uma nova conta.",
+    "name": "Nome",
+    "email": "E-mail",
+    "password": "Senha",
+    "button": "Registrar",
+    "successTitle": "Conta criada!",
+    "successInfo": "Agora você pode acessar com sua nova conta.",
+    "backToLogin": "Voltar para o Login",
+    "error": "Este e-mail já está cadastrado.",
+    "registerLink": "Não tem uma conta? Criar agora"
   }
 } 
