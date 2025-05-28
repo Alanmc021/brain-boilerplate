@@ -1,19 +1,19 @@
 # brainBoilerplate
 
-## Tecnologias Utilizadas
+## Technologies Used
 
 - **React Native CLI + TypeScript**
 - **React Navigation** (Stack/Tab)
-- **Redux Toolkit** (gerenciamento de estado)
+- **Redux Toolkit** (state management)
 - **React Native Paper** (UI components)
-- **React Hook Form + Yup** (formulários e validação)
-- **Axios** (requisições HTTP)
-- **react-i18next** (tradução/i18n)
-- **react-native-localize** (detecção de idioma)
-- **Dotenv** (variáveis de ambiente)
-- **Absolute Imports** (imports com alias)
+- **React Hook Form + Yup** (forms and validation)
+- **Axios** (HTTP requests)
+- **react-i18next** (translation/i18n)
+- **react-native-localize** (language detection)
+- **Dotenv** (environment variables)
+- **Absolute Imports** (alias imports)
 
-## Estrutura de Pastas
+## Folder Structure
 
 ```
 /src
@@ -30,58 +30,66 @@
   App.tsx
 ```
 
-## Como rodar o projeto
+## How to Run the Project
 
-1. **Instale as dependências:**
+1. **Install dependencies:**
    ```sh
    yarn install
    ```
 
-2. **Instale as dependências nativas (iOS):**
+2. **Install native dependencies (iOS):**
    ```sh
    cd ios && pod install && cd ..
    ```
 
-3. **Inicie o Metro Bundler:**
+3. **Start Metro Bundler:**
    ```sh
    yarn start --reset-cache
    ```
 
-4. **Rode o app no simulador iOS:**
+4. **Run the app on iOS simulator:**
    ```sh
    npx react-native run-ios --simulator="iPhone 13" --port=8071
    ```
-   Ou para Android:
+   Or for Android:
    ```sh
    yarn android
    ```
 
-## Fluxo de Autenticação Fake
+## Fake Authentication Flow
 
-- **Tela de Login:**
+- **Login Screen:**
   - Email: `teste@teste.com`
-  - Senha: `123456`
-  - Qualquer outro valor retorna erro.
-  - O login simula um endpoint com delay de 1.5s.
+  - Password: `123456`
+  - Any other value returns an error.
+  - The login simulates an endpoint with a 1.5s delay.
 
-- **Após login:**
-  - Usuário é redirecionado para o menu em tabs (Home, Profile, Settings).
-  - O estado de autenticação é controlado pelo Redux.
+- **After login:**
+  - User is redirected to the tab menu (Home, Profile, Settings).
+  - Authentication state is managed by Redux.
 
-## Tradução (i18n)
-- O app suporta português e inglês.
-- Botão na tela de login para alternar idioma.
+## Internationalization (i18n)
+- The app supports Portuguese and English.
+- Button on the login screen to switch language.
 
-## Scripts úteis
-- `yarn start` - Inicia o Metro Bundler
-- `yarn ios` - Roda no simulador iOS
-- `yarn android` - Roda no emulador Android
-- `yarn lint` - Lint do código
-- `yarn type-check` - Checagem de tipos TypeScript
+## Useful Scripts
+- `yarn start` - Starts Metro Bundler
+- `yarn ios` - Runs on iOS simulator
+- `yarn android` - Runs on Android emulator
+- `yarn lint` - Lints the code
+- `yarn type-check` - TypeScript type checking
 
-## Contribuição
-Pull requests são bem-vindos!
+## Contribution
+Pull requests are welcome!
 
 ---
 
-> Projeto boilerplate para apps React Native modernos, pronto para escalar.
+> This is a modern React Native boilerplate, ready to scale your next mobile app.
+
+---
+
+## Need Help with Mobile Apps?
+
+Do you need help installing, configuring, or building your mobile application? I can assist you with React Native projects, from setup to advanced features.
+
+**Contact:** alanmc021@gmail.com
