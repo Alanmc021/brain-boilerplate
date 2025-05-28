@@ -12,17 +12,21 @@ import { useColorScheme } from 'react-native';
 import { store } from '@store/index';
 import { Navigation } from '@navigation/index';
 import { lightTheme, darkTheme } from '@themes/index';
+import { AuthProvider } from './contexts/AuthContext'
+import './i18n';
 
 function App(): React.JSX.Element {
   const colorScheme = useColorScheme();
   const theme = colorScheme === 'dark' ? darkTheme : lightTheme;
 
   return (
-    <ReduxProvider store={store}>
-      <PaperProvider theme={theme}>
-        <Navigation />
-      </PaperProvider>
-    </ReduxProvider>
+    <AuthProvider>
+      <ReduxProvider store={store}>
+        <PaperProvider theme={theme}>
+          <Navigation />
+        </PaperProvider>
+      </ReduxProvider>
+    </AuthProvider>
   );
 }
 

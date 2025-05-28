@@ -1,97 +1,87 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# brainBoilerplate
 
-# Getting Started
+## Tecnologias Utilizadas
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+- **React Native CLI + TypeScript**
+- **React Navigation** (Stack/Tab)
+- **Redux Toolkit** (gerenciamento de estado)
+- **React Native Paper** (UI components)
+- **React Hook Form + Yup** (formulários e validação)
+- **Axios** (requisições HTTP)
+- **react-i18next** (tradução/i18n)
+- **react-native-localize** (detecção de idioma)
+- **Dotenv** (variáveis de ambiente)
+- **Absolute Imports** (imports com alias)
 
-## Step 1: Start Metro
+## Estrutura de Pastas
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
-
-To start the Metro dev server, run the following command from the root of your React Native project:
-
-```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+```
+/src
+  /assets
+  /components
+  /constants
+  /hooks
+  /navigation
+  /screens
+  /services
+  /store
+  /themes
+  /utils
+  App.tsx
 ```
 
-## Step 2: Build and run your app
+## Como rodar o projeto
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+1. **Instale as dependências:**
+   ```sh
+   yarn install
+   ```
 
-### Android
+2. **Instale as dependências nativas (iOS):**
+   ```sh
+   cd ios && pod install && cd ..
+   ```
 
-```sh
-# Using npm
-npm run android
+3. **Inicie o Metro Bundler:**
+   ```sh
+   yarn start --reset-cache
+   ```
 
-# OR using Yarn
-yarn android
-```
+4. **Rode o app no simulador iOS:**
+   ```sh
+   npx react-native run-ios --simulator="iPhone 13" --port=8071
+   ```
+   Ou para Android:
+   ```sh
+   yarn android
+   ```
 
-### iOS
+## Fluxo de Autenticação Fake
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+- **Tela de Login:**
+  - Email: `teste@teste.com`
+  - Senha: `123456`
+  - Qualquer outro valor retorna erro.
+  - O login simula um endpoint com delay de 1.5s.
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+- **Após login:**
+  - Usuário é redirecionado para o menu em tabs (Home, Profile, Settings).
+  - O estado de autenticação é controlado pelo Redux.
 
-```sh
-bundle install
-```
+## Tradução (i18n)
+- O app suporta português e inglês.
+- Botão na tela de login para alternar idioma.
 
-Then, and every time you update your native dependencies, run:
+## Scripts úteis
+- `yarn start` - Inicia o Metro Bundler
+- `yarn ios` - Roda no simulador iOS
+- `yarn android` - Roda no emulador Android
+- `yarn lint` - Lint do código
+- `yarn type-check` - Checagem de tipos TypeScript
 
-```sh
-bundle exec pod install
-```
+## Contribuição
+Pull requests são bem-vindos!
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+---
 
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+> Projeto boilerplate para apps React Native modernos, pronto para escalar.
